@@ -1,13 +1,10 @@
-import "./assets/css/normalize.css";
+import { fromEvent } from "rxjs";
 
-import { getUsers } from "./users";
-
-export async function printUsers() {
-  const users = await getUsers();
-  const element = document.createElement("div");
-  element.innerHTML = `<h2>Current users</h2>
-    ${users.map((user) => `<div>${user.name}</div>`).join("")}`;
-  return element;
-}
-
-printUsers().then((element) => document.body.appendChild(element));
+const $button = document.getElementById("main-button");
+const click$ = fromEvent($button, "click");
+const subscription = click$.subscribe({
+  next: event => console.log("Event :", event),
+});
+setTimeout(() => {
+  subscription.unsubscribe();
+}, 5000);

@@ -1,0 +1,55 @@
+<div class="container-table mat-elevation-z8">
+
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- urlImage Column -->
+    <ng-container matColumnDef="urlImage">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let row">
+        <img src="{{row.urlImage}}" alt="Hero">
+      </td>
+    </ng-container>
+
+    <!-- Ticker Column -->
+    <ng-container matColumnDef="ticker">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Ticker </th>
+      <td mat-cell *matCellDef="let row"> {{row.ticker}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+    </ng-container>
+
+    <!-- marketCapitalization Column -->
+    <ng-container matColumnDef="marketCapitalization">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> marketCapitalization </th>
+      <td mat-cell *matCellDef="let row"> {{row.marketCapitalization}} </td>
+    </ng-container>
+
+    <!-- actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let row">
+
+        <button mat-flat-button color="primary" type="button" (click)="buyMarket(row)" matTooltip="Comprar y vender">
+          <mat-icon [attr.aria-label]="'Comprar o vender'" aria-hidden="false">attach_money</mat-icon>
+        </button>
+
+        <button mat-flat-button color="primary" type="button" (click)="editMarket(row.id)" matTooltip="Editar el Héroe">
+          <mat-icon [attr.aria-label]="'Editar'" aria-hidden="false">edit</mat-icon>
+        </button>
+        <button mat-flat-button color="primary" type="button" (click)="openDeleteModal($event, row)" matTooltip="Eliminar el Héroe">
+          <mat-icon [attr.aria-label]="'Eliminar'" aria-hidden="false">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 25, 100]" showFirstLastButtons></mat-paginator>
+</div>

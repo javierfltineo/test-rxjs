@@ -1,0 +1,13 @@
+.mat-toolbar-single-row {
+    justify-content: left;
+    background:#0081ce;
+    .logo-header-container{
+        margin-left: 40px;
+        height: 64px;
+        .mat-card-image.logo-header-image {
+            height: inherit;
+            width: auto;
+            margin: 0;
+        }
+    }
+}

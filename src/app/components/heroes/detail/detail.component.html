@@ -1,0 +1,109 @@
+<div>
+    <!-- Come Back Button -->
+    <a class="btn goback" mat-button (click)="navigateToHeroesCancel()">Volver</a>
+    <mat-card class="box-container" fxLayoutGap.gt-xs="40px">
+        <!-- Tittle -->
+        <mat-card-header class="content-title">
+            <mat-card-title *ngIf="param == 'new'">
+                Crear Héroe
+            </mat-card-title>
+            <mat-card-title *ngIf="param != 'new'">
+                Editar Héroe
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="content-form">
+            <!-- Form -->
+            <form class="form-text form-standard" [formGroup]="formHero" (ngSubmit)="save()">
+                <div fxLayout="row" fxLayoutAlign="space-around center">
+                    <!-- Id imput -->
+                    <mat-form-field *ngIf="param != 'new'" appearance="outline" floatLabel="always">
+                        <mat-label>Id</mat-label>
+                        <input matInput [formControl]="formHero.controls.id" readonly />
+                    </mat-form-field>
+                    <!-- Name imput -->
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Nombre</mat-label>
+                        <input appUppercase matInput placeholder="Inserta un nombre" [formControl]="formHero.controls.name" />
+                        <mat-error *ngIf="hasError('name', 'required')">
+                            El campo es requerido.</mat-error>
+                        <mat-error *ngIf="hasError('name', 'maxlength')">
+                            El campo Name excede los caracteres permitidos.</mat-error>
+                    </mat-form-field>
+                    <!-- Alias imput -->
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Alias</mat-label>
+                        <input matInput placeholder="Inserta un alias" [formControl]="formHero.controls.alias" />
+                        <mat-error *ngIf="hasError('alias', 'required')">
+                            El campo es requerido.</mat-error>
+                        <mat-error *ngIf="hasError('alias', 'maxlength')">
+                            El campo alias excede los caracteres permitidos.</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-around center">
+                    <!-- hability imput -->
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Habilidad</mat-label>
+                        <input matInput placeholder="Inserta una habilidad"
+                            [formControl]="formHero.controls.hability" />
+                        <mat-error *ngIf="hasError('hability', 'required')">
+                            El campo es requerido.</mat-error>
+                        <mat-error *ngIf="hasError('hability', 'maxlength')">
+                            El campo Habilidad excede los caracteres permitidos.</mat-error>
+                    </mat-form-field>
+                    <!-- birthDate imput -->
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Fecha de nacimiento</mat-label>
+                        <input matInput type="date" placeholder="Inserta una fecha"
+                            [formControl]="formHero.controls.birthDate" >
+
+                        <mat-error *ngIf="hasError('birthDate', 'required')">
+                            El campo es requerido.</mat-error>
+                    </mat-form-field>
+                    <!-- race imput -->
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Raza</mat-label>
+                        <input matInput placeholder="Inserta una raza" [formControl]="formHero.controls.race" />
+                        <mat-error *ngIf="hasError('race', 'required')">
+                            El campo es requerido.</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-around center">
+                    <!-- civilStatus type select -->
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Estado civil</mat-label>
+                        <mat-select [formControl]="formHero.controls.civilStatus">
+                            <mat-option *ngFor="let value of valuesCivilStatus" [value]="value">
+                                {{ value}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <!-- numberOfMovies imput -->
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>Numero de películas</mat-label>
+                        <input matInput type="number" placeholder="Inserta un numero"
+                            [formControl]="formHero.controls.numberOfMovies" />
+                        <mat-error *ngIf="hasError('alias', 'maxlength')">
+                            El campo numberOfMovies excede el tamaño máximo.</mat-error>
+                    </mat-form-field>
+                    <!-- isAlive input -->
+                    <mat-slide-toggle checked="false" [formControl]="formHero.controls.isAlive">
+                        ¿Esta vivo?
+                    </mat-slide-toggle>
+                    <!-- canFly input -->
+                    <mat-slide-toggle checked="false" [formControl]="formHero.controls.canFly">
+                        ¿Puede volar?
+                    </mat-slide-toggle>
+                </div>
+                <!-- Actions -->
+                <mat-card-actions fxLayoutAlign="center" class="content-cta">
+                    <button class="btn-cancel" mat-stroked-button color="primary" (click)="navigateToHeroesCancel()">
+                        Cancelar
+                    </button>
+                    <button class="btn" mat-flat-button color="primary">
+                        guardar
+                    </button>
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

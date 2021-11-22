@@ -1,0 +1,32 @@
+.sidebar {
+  width: 280px;
+  float: left;
+  background: #0081ce;
+  padding: 15px;
+  padding-bottom: 700px;
+}
+
+.sidebar-menu {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.sidebar-menu li {
+  line-height: 30px;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.sidebar-menu li:hover {
+  background-color: #0065a1;
+}
+
+.sidebar-menu li a {
+  color: #fff;
+}
+
+.mat-card-sm-image {
+  width: 50px;
+  height: 50px;
+}

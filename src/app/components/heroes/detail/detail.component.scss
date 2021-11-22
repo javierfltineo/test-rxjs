@@ -1,0 +1,93 @@
+.box-container {
+    display: block;
+    margin: 20px auto 36px;
+    width: 100%;
+    max-width: 820px;
+    padding: 60px 30px;
+    box-shadow: none;
+    border-radius: 7px;
+    .content-title {
+      width: 100%;
+      letter-spacing: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      .mat-card-title {
+        font-size: 26px;
+        font-weight: 400;
+        color: #0081ce;
+        margin-bottom: 0;
+      }
+    }
+    .content-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      form {
+        width: 100%;
+        .mat-form-field {
+            margin: 1%;
+            width: 100%;
+        }
+        mat-slide-toggle {
+          min-width: 22%;
+        }
+
+        .btn-cancel{
+          margin-right: 12px;
+        }
+
+        .editTitle {
+          margin-bottom: 20px;
+          p {
+            font-weight: 700;
+            font-size: 16px;
+            color: black;
+            letter-spacing: 0;
+            text-transform: lowercase;
+            &::first-letter {
+              text-transform: uppercase;
+            }
+          }
+        }
+        .large {
+          flex: initial !important;
+          width: 60%;
+        }
+        .short {
+          flex: initial !important;
+          width: 40%;
+        }
+      }
+    }
+  }
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.mat-toolbar-single-row {
+  height: auto !important;
+  background: transparent;
+}
+
+.mat-toolbar-single-row button {
+  width: 200px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+#uploadFile {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 9;
+  opacity: 0;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+}

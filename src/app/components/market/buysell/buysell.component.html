@@ -1,0 +1,25 @@
+<div>
+  <div fxLayoutAlign="center none">
+
+    <mat-card class="box-container" fxLayoutGap.gt-xs="40px">
+      <!-- Tittle -->
+      <mat-card-header class="content-title">
+          <mat-card-title><h2> Comprar {{ticker}} </h2></mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="content-form">
+        <form class="form-text form-standard" [formGroup]="formBuySell" (ngSubmit)="actionMakeOperation()">
+          <div fxLayout="row" fxLayoutAlign="space-around center">
+            <input type="number" [formControl]="formBuySell.controls.leverage" />
+          </div>
+
+          <!-- Actions -->
+          <mat-card-actions fxLayoutAlign="center" class="content-cta">
+            <button class="btn" mat-flat-button color="primary">
+                Realizar Operación
+            </button>
+        </mat-card-actions>
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+</div>

@@ -1,0 +1,397 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin:0px;
+    .container{
+        padding: 0;
+        width: 98%;
+        max-width: 1920px;
+        margin: 0;
+        .mat-column-actions{
+          text-align: center;
+          .mat-flat-button.mat-primary {
+            background-color: #3d3f49;
+            padding: 0px;
+            min-width: 36px;
+          }
+        }
+        .container-name-section{
+            padding-bottom: 20px;
+            margin-bottom: 0px;
+            border-bottom: 1px solid #D8DCE6;
+            h1{
+                color: #DA291C;
+                letter-spacing: 0;
+                margin: 0 auto;
+            }
+        }
+
+        .mat-flat-button.mat-primary{
+            background-color: #3d3f49;
+        }
+
+        .mat-form-field{
+            margin: 1%;
+        }
+    }
+}
+
+
+
+@import '~@angular/material/theming';
+
+$mat-reddia: (
+  10: #FBE9E8,
+  20: #F8D4D2,
+  60: #E97F77,
+  100: #DA291C,
+  contrast: (
+    100: $light-primary-text,
+  )
+);
+$mat-blackdia: (
+  1: #F8F9FB,
+  3: #F0F2F5,
+  10: #D8DCE6,
+  50: #9EA3AF,
+  80: #3D3F49, //Texto / borde inputs (negro 80)
+  100: #0D0F1B,
+  contrast: (
+    80: $light-primary-text,
+  )
+);
+$mat-purpledia: (
+  10: #E0D4E1,
+  100: #642667,
+  contrast: (
+    100: $light-primary-text,
+  )
+);
+$mat-yellowdia: (
+  15: #FDF4DE,
+  100: #EDB51E, //Atención
+  contrast: (
+    100: $light-primary-text,
+  )
+);
+$mat-greendia: (
+  3: #F2F8E5,
+  100: #84BD00, //Confirmado
+  contrast: (
+    100: $light-primary-text,
+  )
+);
+$mat-linkdia: (
+  100: #2F88F1,
+  contrast: (
+    100: $light-primary-text,
+  )
+);
+
+@include mat-core();
+
+$candy-app-primary: mat-palette($mat-blackdia,80);
+$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+
+$candy-app-warn:    mat-palette($mat-reddia,100);
+
+$candy-app-theme: mat-light-theme((
+  color: (
+    primary: $candy-app-primary,
+    accent: $candy-app-accent,
+    warn: $candy-app-warn,
+  )
+));
+
+@include angular-material-theme($candy-app-theme);
+
+/************************************************************/
+// ESTILOS GENERALES:
+
+/* You can add global styles to this file, and also import other style files */
+
+$body-bg: #F7F8FA;
+$blanco: #FFFFFF;
+$negro-1: #F8F9FB;
+$negro-3: #F0F2F5;
+$negro-10: #D8DCE6;
+$negro-50: #9EA3AF;
+$negro-80: #3D3F49;
+$negro-100: #0D0F1B;
+$rojo-100: #DA291C;
+$rojo-60: #E97F77;
+$rojo-20: #F8D4D2;
+$rojo-10: #FBE9E8;
+$morado-100: #642667;
+$morado-10: #E0D4E1;
+$amarillo-100: #EDB51E;
+$amarillo-15: #FDF4DE;
+$verde-100: #84BD00;
+$verde-3: #F2F8E5;
+$link-color: #2F88F1;
+$roboto: Roboto, "Helvetica Neue", sans-serif;
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    background-color: $body-bg;
+}
+
+.container {
+  width: 98%;
+  max-width: 1920px!important;
+  margin: 1rem auto 0 auto;
+}
+
+td button:not(:first-child) {
+    margin-left: 0.5rem!important;
+}
+
+td.column-actions button {
+    padding: 0!important;
+    min-width: 36px!important;
+}
+
+.full-width {
+    width: 100%!important;
+}
+
+.full-height {
+    height: 100%!important;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    float: left;
+    padding-right: .5rem;
+    color: #ffffff;
+    content: var(--bs-breadcrumb-divider, "/");
+}
+
+* {margin:0;padding:0;border:0;}
+a { text-decoration: none; }
+a , img { display: block; }
+p a { display: inline; }
+li{ list-style-type: none; }
+a:link { text-decoration: none }
+a:hover { text-decoration: none }
+a:visited { text-decoration: none }
+.clear { clear:both; }
+body{
+  /*Definir mejor las letras y que no se vean borrosas*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*Fin definir las letras*/
+}
+
+// - - - - - ELEMENTOS COMUNES - - - - - //
+
+form{
+  .mat-grid-tile{
+    position: initial;
+    height: initial !important;
+    .mat-figure{
+      position: initial;
+    }
+  }
+}
+// Contenedor del titulo de la seccion y los cta
+  .container-name-section{
+    display: flex;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $negro-10;
+
+    h1{
+      font: 500 21px/24px Roboto, "Helvetica Neue", sans-serif;
+      color: $rojo-100;
+      letter-spacing: 0;
+    }
+    .content-title{
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+    }
+  }
+
+//Botones
+  .btn{
+    &.goback{
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: $negro-50;
+      font-weight: 700;
+    }
+  }
+
+.container-table{ //contenedor de la tabla con resultados de búsqueda
+  display: block;
+  border-radius: 7px;
+  .mat-figure{
+    position: relative;
+  }
+  .message-result-search{
+    font-family: $roboto;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0;
+    padding: 20px;
+    color: $negro-80;
+    align-items: center;
+    background-color: $blanco;
+    border-radius: 7px 7px 0 0;
+  }
+  table{
+    thead{
+      background-color: $negro-1;
+      th{
+        text-transform: uppercase !important;
+      }
+    }
+    th, td{
+      padding: 0 15px !important;
+      border-left: solid 1px $negro-3;
+    }
+
+    // ancho fijo de la celda
+    .fixed-width{
+      text-transform: lowercase;
+      width: 480px;
+      &::first-letter{
+        text-transform: uppercase;
+      }
+    }
+
+    //input de cantidad con flecha hacia la derecha (ej: order-items)
+    .column-quantity{
+      .mat-form-field{
+        height: 26px;
+        .mat-form-field-wrapper{
+          padding-bottom: 0;
+        }
+      }
+      mat-form-field{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .mat-form-field-flex{
+        padding: 0;
+        margin: 0;
+        .mat-form-field-outline{
+          width: 100%;
+          height: 100%;
+          top: 0;
+        }
+      }
+      .mat-form-field-infix{
+        width: 90px;
+        height: 26px;
+        padding: 0;
+        border-top: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        input{
+          height: 26px;
+          text-align: center;
+          padding-right: 29px;
+        }
+        span{
+          display: none;
+        }
+      }
+      .mat-form-field-suffix{
+        position: absolute;
+        top: 0;
+        right: 0;
+        .mat-icon-button{
+          background-color: $negro-80;
+          width: 29px;
+          height: 26px;
+          border-radius: 0 5px 5px 0;
+          color: white;
+          font-size: 11px;
+        }
+      }
+    }
+
+    //celda fecha + hora (ej: order-table)
+    .column-DateTime{
+      div{
+        text-align: center;
+        font-size: 12px;
+        letter-spacing: 0;
+        &:nth-child(1){
+          font-weight: 500;
+          color: $negro-80;
+        }
+        &:nth-child(2){
+          color: $negro-50;
+        }
+      }
+    }
+
+    //Convertir texto a minúscula excepto la primera letra (ej: bulletins, order-items, order-edit)
+    .first-letter-up{
+      text-transform: lowercase;
+      &::first-letter{
+        text-transform: uppercase;
+      }
+    }
+
+    //centrar imagen (ej: order-items, order-edit)
+    .center-img{
+      img{
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+//Paginador de las tablas
+mat-paginator{
+  border-radius: 0 0 7px 7px;
+}
+.mat-paginator-page-size-label{
+  width: 100px;
+}
+
+table {
+  width: 100%;
+  .green{
+    color: $verde-100;
+  }
+  .red{
+    color: $rojo-100;
+  }
+}
+
+label.mat-slide-toggle-label {
+  justify-content: center;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #00a700;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: rgba(64, 255, 105, 0.54);
+}
+
+.mat-slide-toggle-thumb {
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  background-color: #0081ce;
+}
+
+mat-card-actions.mat-card-actions {
+  margin-top: 34px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.mat-card-header-text {
+  margin: 0 16px 22px;
+}
+// - - - - - FIN ELEMENTOS COMUNES - - - - - //
+

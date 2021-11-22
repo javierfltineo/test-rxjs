@@ -1,0 +1,27 @@
+td:first-child{
+    width: 47px;
+    margin: 0;
+    padding: 0 !important;
+    img {
+        width: 47px;
+    }
+} 
+
+.married span {
+    background: #a2e800;
+    padding: 6px 18px;
+    border-radius: 8px;
+    color: darkgreen;
+}
+
+.single span {
+    background: #ffc135;
+    padding: 6px 24px;
+    border-radius: 8px;
+    color: #633600;
+}
+
+
+.marginRight{
+    margin-right: 12px;
+}

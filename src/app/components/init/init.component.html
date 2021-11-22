@@ -1,0 +1,47 @@
+<div>
+
+  <div class="box-container" fxLayout="row" >
+
+    <div class="box-container" fxLayout="row" fxLayoutGap="20px">
+      <div fxFlex="75">
+        <etoro-post *ngFor="let post of posts" [post]=post></etoro-post>
+      </div>
+      <div fxFlex="25">
+        <mat-card class="posts post">
+          <mat-card-header>
+            <mat-card-title class="text-positive">Mayores subidas</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="up-markets" style="padding-left: 0;">
+            <mat-card fxLayout="row" fxLayoutGap="20px" class="box-sizing-content-box">
+              <div fxFlex="75" class="bold">
+                AAPL
+              </div>
+              <div fxFlex="25">
+                <span class="text-positive">+15.52%</span>
+              </div>
+            </mat-card>
+            <mat-card>AMZN</mat-card>
+          </mat-card-content>
+        </mat-card>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title class="text-negative">Mayores bajadas</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="down-markets" style="padding-left: 0;">
+            <mat-card fxLayout="row" fxLayoutGap="20px" class="box-sizing-content-box">
+              <div fxFlex="75" class="bold">
+                XRP
+              </div>
+              <div fxFlex="25">
+                <span class="text-negative">-24.52%</span>
+              </div>
+            </mat-card>
+            <mat-card>AMZN</mat-card>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+
+</div>
+

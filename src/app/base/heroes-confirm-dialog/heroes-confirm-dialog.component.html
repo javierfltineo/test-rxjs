@@ -1,0 +1,13 @@
+<h2 align="center" mat-dialog-title *ngIf="this.data.title">{{this.data.title}}</h2>
+<mat-dialog-content class="mat-typography">
+  <div align="center" class="confirm-dialog-icon" *ngIf="this.data.type"></div>
+  <div class="confirm-dialog-content" *ngIf="this.data.text">{{this.data.text}}</div>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-stroked-button color="primary" mat-dialog-close *ngIf="this.data.rejectButton">
+    {{this.data.rejectButton}}
+  </button>
+  <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial *ngIf="this.data.confirmButton">
+    {{this.data.confirmButton}}
+  </button>
+</mat-dialog-actions>

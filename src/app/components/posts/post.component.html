@@ -1,0 +1,23 @@
+
+<mat-card class="posts post">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"><img mat-card-sm-image src="assets/avatars/{{post.author.avatar}}" ></div>
+    <mat-card-title>{{post.author.alias}}</mat-card-title>
+    <mat-card-subtitle>{{post.author.name}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{post.text}}
+    </p>
+    <img mat-card-image *ngIf="post.attachment" src="{{post.attachment}}" alt="Photo of a Shiba Inu">
+  </mat-card-content>
+  <mat-card-actions>
+    <button *ngIf="post.user_likes && post.user_likes.includes(1)" [ngClass]="'liked'" mat-raised-button matBadge="{{post.likes}}" matBadgePosition="before" matBadgeColor="accent">LIKE</button>
+    <button *ngIf="!post.user_likes || !post.user_likes.includes(1)" mat-raised-button matBadge="{{post.likes}}" matBadgePosition="before" matBadgeColor="accent">LIKE</button>
+    <button mat-raised-button>SHARE</button>
+  </mat-card-actions>
+  <mat-card-footer *ngIf="post.number_of_comments">
+    <h2>Comentarios ({{post.number_of_comments}})</h2>
+    <etoro-post *ngFor="let comment of post.comments" [post]=comment></etoro-post>
+  </mat-card-footer>
+</mat-card>

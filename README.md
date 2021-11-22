@@ -1,64 +1,27 @@
-# JavaScript Bootstrap (base / project starter)
+# MySuperHeroesApp
 
-This is a repository intended to serve as a starting point if you want to bootstrap a project in modern vanilla JavaScript.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
-## Features
+## Development server
 
-- [Webpack](https://webpack.js.org/) (v5)
-- [Babel](https://babeljs.io/) with [preset-env](https://babeljs.io/docs/en/babel-preset-env)
-- [Prettier](https://prettier.io/)
-- [ESLint](https://eslint.org/) with:
-  - [Simple Import Sort](https://github.com/lydell/eslint-plugin-simple-import-sort/)
-  - [Import plugin](https://github.com/benmosher/eslint-plugin-import/)
-  - [HTML plugin](https://github.com/BenoitZugmeyer/eslint-plugin-html)
-  - And a few other ES2015+ related rules
-- [Jest](https://jestjs.io) with [DOM Testing Library](https://testing-library.com/docs/dom-testing-library/intro)
-- [Cypress](https://www.cypress.io/) with [Testing Library](https://testing-library.com/docs/cypress-testing-library/)
-- [GitHub Action workflows](https://github.com/features/actions) set up to run tests and linting on push
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Running the app
+## Code scaffolding
 
-```
-# install dependencies
-npm install
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-# run in dev mode on port 8080
-npm run dev
+## Build
 
-# generate production build
-npm run build
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-# run generated content in dist folder on port 8080
-npm run start
-```
+## Running unit tests
 
-## Testing
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-### Jest with Testing Library
+## Running end-to-end tests
 
-```
-npm run test
-```
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-### Cypress
+## Further help
 
-```
-# run in dev mode on port 8080
-npm run dev
-
-# open Cypress to run tests on dev mode
-npm run cy:open
-
-# open Cypress on CLI
-npm run cy:run
-```
-
-## Linting
-
-```
-# run linter
-npm run lint
-
-# fix lint issues
-npm run lint:fix
-```
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
